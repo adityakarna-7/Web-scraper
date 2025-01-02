@@ -4,19 +4,18 @@ from bs4 import BeautifulSoup
 import time
 import csv
 
-# Set up Selenium WebDriver (update with your ChromeDriver path)
-service = Service(r"C:\Users\adi\Desktop\New folder\chromedriver\chromedriver.exe")  # Replace with your actual path
+
+service = Service(r"CHROME DRIVER PATH")  # Replace with your actual path
 driver = webdriver.Chrome(service=service)
 
 # URL to scrape
 url = "http://books.toscrape.com"
 
 try:
-    # Open the website
+    
     driver.get(url)
     time.sleep(3)  # Wait for the page to load
 
-    # Get the page source and parse it with BeautifulSoup
     soup = BeautifulSoup(driver.page_source, 'html.parser')
 
     # Find all books (titles and prices)
